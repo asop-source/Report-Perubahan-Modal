@@ -1,0 +1,5 @@
+1. buat Coa dan Code 3120000
+2. Buat Jurnal entry untuk semua COA di atas posisi credit, Debitnya Bank untuk tanggal sebelum date_start
+3. Balance as of, December 31, 2017 adalah  sum(debit-Credit) dari account.move.line di mana account_id = 3120000 dan Tanggal kurang dari date_start
+4. Additional members savings adalah sum(debit-Credit) dari account.move.line di mana account_id = 3120000 dan Tanggal lebih dari date_start dan kurang dari date_end
+5. Balance as of, Jan 31, 2018 adalah baris 3 + Baris 4 

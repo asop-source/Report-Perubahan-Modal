@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+                <record id="view_vit_report_modal_tree" model="ir.ui.view">
+                    <field name="name">report.perubahan.modal.tree</field>
+                    <field name="model">report.perubahan.modal</field>
+                    <field name="type">tree</field>
+                    <field name="priority" eval="8"/>
+                    <field name="arch" type="xml">
+                        <tree string="Laporan Perubahan Modal">
+                            <field name="name_report"/>
+                            <field name="name"/>
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </tree>
+                    </field>
+                </record>
+
+                <record id="view_vit_report_modal_form" model="ir.ui.view">
+                    <field name="name">report.perubahan.modal</field>
+                    <field name="model">report.perubahan.modal</field>
+                    <field name="type">form</field>
+                    <field name="priority" eval="8"/>
+                    <field name="arch" type="xml">
+                        <form string="Laporan Perubahan Modal" >
+                            <header>
+                                <button string="Generete Report" name="generate_master" type="object" class="btn-success" icon="fa-check-circle"/>
+                                <button string="Export Excel" name="export_excel" type="object"  class="btn-primary" icon="fa-table"/>
+                            </header>
+                            <sheet>
+                                <div class="oe_button_box" name="button_box">
+                                 <!--button type="object" name="action_view_detail" class="oe_stat_button" icon="fa-pencil-square-o"-->
+                                        <!--field name="detail_count" widget="statinfo" string="Detail(s)"/-->
+                                        <!--field name="detail_ids" invisible="1"/-->
+                                    <!--/button-->
+                                </div>
+                                <div class="oe_title">
+                                    <label for="name" class="oe_edit_only"/>
+                                    <h1><field name="name" /></h1>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="date_start" />
+                                        <field name="date_end" />
+                                        <field name="company_id" />
+                                        <field name="name_report"/>             
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page string="Laporan Perubahan Modal" attrs="{'invisible': [('name_report','!=','Report Perubahan Modal')]}">
+                                        <field name="report_ids" >
+                                            <tree editable="bottom">  
+                                                <field name="name"/>
+                                                <field name="compulsory"/>
+                                                <field name="principal" />
+                                                <field name="voluntary" />
+                                                <field name="donation" />
+                                                <field name="general" />
+                                                <field name="working" />
+                                                <field name ="earning" />
+                                                <field name ="total" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </sheet>
+                        </form>
+                    </field>
+                </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+            <record id="action_vit_perubahan_modal" model="ir.actions.act_window">
+                  <field name="name">Report</field>
+                  <field name="type">ir.actions.act_window</field>
+                  <field name="res_model">report.perubahan.modal</field>
+                  <field name="view_type">form</field>
+                  <field name="view_mode">kanban,tree,form,calendar,graph</field>
+                  <field name="context">{"search_default_fieldname":1}</field>
+                  <field name="help" type="html">
+                      <p class="oe_view_nocontent_create">
+                      Click to add a new Report balance
+                      </p><p>
+                      Click the Create button to add a new Report balance
+                      </p>
+                  </field>
+              </record>
+
+              <record id="view_vit_report_modal_kanban" model="ir.ui.view" >
+                  <field name="name">report.perubahan.modal</field>
+                  <field name="model">report.perubahan.modal</field>
+                  <field name="arch" type="xml">
+                      <kanban version="7.0">
+                          <templates>
+                              <t t-name="kanban-box">
+                                  <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                                      <div class="oe_kanban_details">
+                                          <h4>
+                                              <a type="open"><field name="name_report"/></a>
+                                          </h4>
+                                          <ul>
+                                              <li>
+                                                  Name = <field name="name" />
+                                              </li>
+                                              <li>
+                                                  Date  = <field name="date_start" /> - <field name="date_end" />
+                                              </li>
+                                              <li>
+                                                  Company = <field name="company_id" />
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </t>
+                          </templates>
+                      </kanban>
+                  </field>
+              </record>
+
+      <menuitem id="report_perubahan_modal"
+                name="Report Modal" 
+                sequence="20"
+                web_icon="vit_perubahan_modal,static/Picture/icon.png" />
+      <menuitem id="sub_report_perubahan_modal" 
+                name="Report Perubahan Modal" 
+                sequence="40" 
+                parent="report_perubahan_modal"
+                action="action_vit_perubahan_modal"/>
+  </data>
+</odoo>

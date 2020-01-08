@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vit_report_modal,vit_report_modal,model_report_perubahan_modal_line,,1,1,1,1
+access_vit_report_perubahan_modal,vit_report_perubahan_modal,model_report_perubahan_modal,,1,1,1,1
+access_vit_report_perubahan_modal_master,vit_report_perubahan_modal_master,model_report_perubahan_modal_master,,1,1,1,1
